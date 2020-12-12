@@ -1,0 +1,25 @@
+<div class="game-block">
+  <h2 class="name">Hello, {{playerName}}!</h2>
+      <p *ngIf="countClicks > 0" class="message">You have made {{countClicks}} clicks!</p>
+    <div class="button-wrapper">
+      <button class="btn-click" mat-raised-button color="warn" (click)="startClick()">{{ isTimerRunning ? 'Click to count' : 'Click to start'}}</button>
+    </div>
+    <div class="content">
+      <mat-form-field appearance="fill">
+        <mat-label>Choose a time</mat-label>
+        <mat-select [disabled]="isTimerRunning" (selectionChange)="onSelectChange($event)">
+          <mat-option *ngFor="let opt of timerData.timerData" [checked]="opt.selected" [value]="opt.value">{{opt.value}} sec</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <!-- <select [disabled]="isTimerRunning" (change)="onSelectChange($event)">
+        <option *ngFor="let opt of timerData.timerData" [checked]="opt.selected" [value]="opt.value">{{opt.value}} sec</option>
+      </select> -->
+      <p>Timer: {{timerData.timer | async}}</p>
+      <p>Count of Clicks: {{clickerData.clickCount | async}}</p>
+    </div>
+    <div class="btn-container">
+      <button mat-raised-button color="primary" (click)="changeName()">Change Name</button>
+      <button mat-raised-button color="primary" (click)="seeResults()">See results</button>
+      <button mat-raised-button color="primary" (click)="reset()">Reset</button>
+    </div>
+</div>

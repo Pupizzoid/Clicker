@@ -1,0 +1,33 @@
+<div>
+  <h2 class="table-title">Table of Results</h2>
+  <table mat-table [dataSource]="resultsData" class="mat-elevation-z8" class="table">
+    <!-- playerName Column -->
+    <ng-container matColumnDef="playerName">
+      <th mat-header-cell *matHeaderCellDef>Player Name</th>
+      <td mat-cell *matCellDef="let element"> {{element.playerName}}</td>
+    </ng-container>
+
+    <!-- Game Time Column -->
+    <ng-container matColumnDef="gameTime">
+      <th mat-header-cell *matHeaderCellDef> Game Time </th>
+      <td mat-cell *matCellDef="let element"> {{element.gameTime}} </td>
+    </ng-container>
+
+    <!-- Clicks Column -->
+    <ng-container matColumnDef="clicks">
+      <th mat-header-cell *matHeaderCellDef> Clicks </th>
+      <td mat-cell *matCellDef="let element"> {{element.clicks}} </td>
+    </ng-container>
+
+    <!-- Clicks on sec Column -->
+    <ng-container matColumnDef="Clicks on sec">
+      <th mat-header-cell *matHeaderCellDef> Clicks on second </th>
+      <td mat-cell *matCellDef="let element"> {{element.clicks/element.gameTime}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+

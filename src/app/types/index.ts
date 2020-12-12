@@ -1,0 +1,1 @@
+export { IGameResult } from './gameResult';

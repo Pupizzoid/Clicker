@@ -1,0 +1,32 @@
+.game-block {
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: auto;
+  box-shadow: 0 2px 4px -2px rgba(0,0,0,0.24), 0 4px 24px -2px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.name,
+.message {
+  width: 100%;
+  text-align: center;
+}
+
+.button-wrapper,
+.content {
+  width: 50%;
+}
+
+.btn-click {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.btn-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
