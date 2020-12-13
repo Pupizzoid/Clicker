@@ -43,12 +43,12 @@ export class GameComponent implements OnInit {
     });
   }
 
-  public onSelectChange(e):void {
+  public onSelectChange(e): void {
     this._gameTime = e.value;
     this.timerData.setTimer(this._gameTime);
   }
 
-  public startClick():void {
+  public startClick(): void {
     if (this.isTimerRunning) {
       this.clickerData.click();
       return;
@@ -56,15 +56,15 @@ export class GameComponent implements OnInit {
     this.timerData.startTimer();
   }
 
-  public changeName():void {
+  public changeName(): void {
     this.router.navigate(['register']);
   }
 
-  public seeResults():void  {
+  public seeResults(): void {
     this.router.navigate(['results']);
   }
 
-  public reset():void  {
+  public reset(): void {
     this.clickerData.reset();
     this.timerData.reset();
   }

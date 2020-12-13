@@ -11,13 +11,13 @@ export class RegisterComponent implements OnInit {
   constructor(
     private router: Router
   ) {
-    this.defaultValue
+    this.defaultValue;
    }
 
   ngOnInit(): void {
   }
 
   public addNewPlayer() {
-    this.router.navigate(['game'], { queryParams: { name: this.defaultValue } })
+    this.router.navigate(['game'], { queryParams: { name: this.defaultValue } });
   }
 }

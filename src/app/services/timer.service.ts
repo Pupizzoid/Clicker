@@ -44,7 +44,7 @@ export class TimerService {
     --this._timer;
     this.timer.next(this._timer);
     if (this._timer > 0) {
-      this.nextTick()
+      this.nextTick();
     } else {
       this.isRunning.next(false);
       this.finish.next();
